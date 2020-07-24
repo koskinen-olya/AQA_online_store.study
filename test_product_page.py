@@ -1,5 +1,6 @@
 from .pages.product_page import PageObject
 from .pages.base_page import BasePage
+from .pages.basket_page import BasketPage
 import pytest
 
 @pytest.mark.skip
@@ -57,3 +58,12 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     product_page = PageObject(browser, link)
     product_page.open()
     product_page.go_to_login_page()
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    product_page = PageObject(browser, link)
+    product_page.open()
+    product_page.go_to_basket()
+    product_page2 = BasketPage(browser, browser.current_url)
+    product_page2.product_basket()
+    product_page2.message_basket()
