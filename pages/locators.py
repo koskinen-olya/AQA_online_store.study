@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 class LoginPageLocators():
-	LOGIN_URL = (By.CSS_SELECTOR, "#login_link")
+	LOGIN_URL = (By.CSS_SELECTOR, "#login_link_inc")
 	LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
 	LOGIN_REGISTRATION = (By.CSS_SELECTOR, "#register_form")
 class ProductPageLocators():
@@ -13,3 +13,6 @@ class ProductPageLocators():
 	BOOK_NAME = (By.CSS_SELECTOR, "div.col-sm-6.product_main > h1")
 	BOOK_NAME_IN_BASKET = (By.CSS_SELECTOR, "#messages>div:nth-child(1) strong")
 	SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages>div:nth-child(1)")
+class BasePageLocators():
+	LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+	LOGIN_URL = (By.CSS_SELECTOR, "#login_link_inc")
