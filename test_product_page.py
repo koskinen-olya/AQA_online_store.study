@@ -24,6 +24,7 @@ class TestUserAddToBasketFromProductPage():
         product_page = PageObject(browser, link)
         product_page.open()
         product_page.should_not_be_success_message()
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
         product_page = PageObject(browser, link)
@@ -41,12 +42,12 @@ def test_guest_cant_see_success_message(self, browser):
     product_page.should_not_be_success_message()
 
 #Данный тест кейс проверяет корректное добавление в корзину
-def test_guest_can_add_product_to_basket(self, browser):
+@pytest.mark.need_review
+def test_guest_can_add_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
     product_page = PageObject(browser, link)
     product_page.open()
     product_page.add_product()
-    product_page.solve_quiz_and_get_code()
     product_page.price_iden()
     product_page.name_iden()
     product_page.correct_message()
@@ -89,12 +90,15 @@ def test_guest_should_see_login_link_on_product_page(browser):
     product_page.should_be_login_link()
 
 #Переходит на форму входа со страницы продукта
+@pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     product_page = PageObject(browser, link)
     product_page.open()
     product_page.go_to_login_page()
+
 #Проверяет, что со страницы товара можно перейти в корзину и она будет пуста
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     product_page = PageObject(browser, link)
