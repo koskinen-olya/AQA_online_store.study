@@ -1,1 +1,2 @@
-# This repository contains automated tests for functional testing of various pages of the online store.
+Учебный проект в рамках курса - https://stepik.org/course/575/promo#toc
+Автотест на Python с использованием PageObject.
